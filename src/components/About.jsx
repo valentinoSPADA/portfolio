@@ -34,9 +34,9 @@ function About() {
                 </Text>
                 <Text fontSize='xl'>
 
-                    I did the bootcamp at "Soy Henry", an intense 5-months-bootcamp where I learned
+                    I studied at "Soy Henry", an intense 5-months-bootcamp where I learned
                     almost everything I know about programming,
-                    but above all I learned to learn.
+                    but above all I learned how to learn.
                 </Text>
                 <Text fontSize='xl'>
                     I have teamwork and leadership skills.

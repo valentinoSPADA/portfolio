@@ -19,7 +19,7 @@ const projects = [{
     repositorio: ["https://github.com/valentinoSPADA/videogames-PI"],
     deploy: "no realizado",
     video: "https://www.linkedin.com/feed/update/urn:li:activity:6907094150408458242/",
-    description: "I developed a SPA (Single Page Application) using React with Redux for the Front End. All components were styled with CSS and CSS modules without using external libraries.It consumes data from an API(rawg.io) through a Back End API developed in NodeJS using Express, adding new features to the original API."
+    description: "I developed a SPA (Single Page Application) using React with Redux for the Front End. All components were styled with CSS and CSS modules without using external libraries. It consumes data from an API (rawg.io) through a Back End API developed in NodeJS using Express, adding new features to the original API."
 }, {
     name: "BEEF SHOP",
     img: beefshop,

@@ -25,29 +25,20 @@ import {
 } from 'react-icons/si'
 
 const tecnologies = [{
+    icon: <SiHtml5 size={'50px'} />,
+    name: "HTML5"
+}, {
+    icon: <FaCss3Alt size={'50px'} />,
+    name: "CSS"
+}, {
     icon: <SiJavascript size={'50px'} />,
     name: "JavaScript"
-}, {
-    icon: <SiTypescript size={'50px'} />,
-    name: "TypeScript"
-}, {
-    icon: <SiAngular size={'50px'} />,
-    name: "Angular"
 }, {
     icon: <FaReact size={'50px'} />,
     name: "React"
 }, {
     icon: <SiRedux size={'50px'} />,
     name: "Redux"
-}, {
-    icon: <FaCss3Alt size={'50px'} />,
-    name: "CSS"
-}, {
-    icon: <SiChakraui size={'50px'} />,
-    name: "Chakra UI"
-}, {
-    icon: <SiFramer size={'50px'} />,
-    name: "Framer Motion"
 }, {
     icon: <SiBootstrap size={'50px'} />,
     name: "Bootstrap"
@@ -64,14 +55,23 @@ const tecnologies = [{
     icon: <SiExpress size={'50px'} />,
     name: "Express"
 }, {
-    icon: <SiHtml5 size={'50px'} />,
-    name: "HTML5"
+    icon: <SiChakraui size={'50px'} />,
+    name: "Chakra UI"
+}, {
+    icon: <SiFramer size={'50px'} />,
+    name: "Framer Motion"
 }, {
     icon: <SiGithub size={'50px'} />,
     name: "GitHub"
 }, {
     icon: <SiGit size={'50px'} />,
     name: "Git"
+}, {
+    icon: <SiTypescript size={'50px'} />,
+    name: "TypeScript"
+}, {
+    icon: <SiAngular size={'50px'} />,
+    name: "Angular"
 },]
 
 function Skills() {
@@ -81,22 +81,22 @@ function Skills() {
 
 
     return (
-        <Stack bg='#1B1E2E' color='#F2F2F2' id='skills' h={{base:'160vh' ,sm:'140vh' , md:'100vh' , lg:'100vh'}} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
+        <Stack bg='#1B1E2E' color='#F2F2F2' id='skills' h={{ base: '160vh', sm: '140vh', md: '100vh', lg: '100vh' }} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
             <Stack alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                 <Text fontSize='6xl'>Skills</Text>
             </Stack>
-            <Grid  align="center"
+            <Grid align="center"
                 w={{ base: "100%", sm: "100%", md: "100%", lg: "90%" }}
                 gap={{ base: 6, sm: 6, md: 4, lg: 8 }}
                 templateColumns={
-                  {
-                    base: "repeat(2, 1fr)",
-                    sm: "repeat(3, 1fr)",
-                    md: "repeat(4, 1fr)",
-                    lg: "repeat(8, 1fr)"
-                  }
+                    {
+                        base: "repeat(2, 1fr)",
+                        sm: "repeat(3, 1fr)",
+                        md: "repeat(4, 1fr)",
+                        lg: "repeat(8, 1fr)"
+                    }
                 }
-              >
+            >
                 {
                     tecnologies?.map((t) => {
                         return (

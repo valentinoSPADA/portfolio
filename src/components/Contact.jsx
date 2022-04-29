@@ -73,7 +73,7 @@ function Contact() {
                             id='text'
                             type='text'
                             name='text'
-                            placeholder='Write what you want to say to me...'
+                            placeholder='Write what you want to tell me...'
                             value={input.text}
                             onChange={handleInputChange}
                         />
