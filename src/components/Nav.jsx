@@ -57,23 +57,23 @@ function Nav() {
                     <Link to="contact" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' variant='link' fontWeight={1} fontSize={'xl'} padding={2}>Contact</Button></Link>
                 </Stack>
                 <Stack display={{ base: 'flex', sm: 'flex', md: 'none', lg: 'none' }}>
-                    <Button bg={'none'} onClick={() => onOpen()}>
+                    <Button bg={'none'} _active={{ bg: 'none' }} _hover={{bg: 'none'}} _focus={{ bg: 'none' }} onClick={() => onOpen()}>
                         <CgMenu size={'40px'} />
                     </Button>
                     <Drawer onClose={onClose} isOpen={isOpen} size={'full'}>
                         <DrawerOverlay />
                         <DrawerContent bg={'#262626'}>
-                        <Stack direction={'row-reverse'} mt={'10px'}>
-                            <Button bg={'none'} onClick={()=> onClose()} width={'70px'}><CgClose size={'40px'} color='#f2f2f2'/></Button>
-                        </Stack>
-                            <Link to="/" spy={true} style={{ cursor: 'pointer' }} smooth={true} offset={0} onClick={()=> onClose()} duration={700}><DrawerHeader color={'#F2F2F2'} fontSize={'6xl'}>Landing</DrawerHeader></Link>
-                            <DrawerBody>
-                            <Stack direction={'column'} h={'100%'} justifyContent={'space-around'}>
-                                <Link to="about" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} onClick={()=> onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>About me</Button></Link>
-                                <Link to="skills" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} onClick={()=> onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Skills</Button></Link>
-                                <Link to="projects" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} onClick={()=> onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Projects</Button></Link>
-                                <Link to="contact" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} onClick={()=> onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Contact</Button></Link>
+                            <Stack direction={'row-reverse'} mt={'10px'}>
+                                <Button bg={'none'} _hover={{bg: 'none'}} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} width={'70px'}><CgClose size={'40px'} color='#f2f2f2' /></Button>
                             </Stack>
+                            <Link to="/" spy={true} style={{ cursor: 'pointer' }} smooth={true} offset={0} onClick={() => onClose()} duration={700}><DrawerHeader color={'#F2F2F2'} fontSize={'6xl'}>Landing</DrawerHeader></Link>
+                            <DrawerBody>
+                                <Stack direction={'column'} h={'100%'} justifyContent={'space-around'}>
+                                    <Link to="about" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>About me</Button></Link>
+                                    <Link to="skills" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Skills</Button></Link>
+                                    <Link to="projects" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Projects</Button></Link>
+                                    <Link to="contact" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Contact</Button></Link>
+                                </Stack>
                             </DrawerBody>
                         </DrawerContent>
                     </Drawer>
