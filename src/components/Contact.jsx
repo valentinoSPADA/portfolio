@@ -37,7 +37,7 @@ function Contact() {
 
     return (
         <Stack bg='#1B1E2E' id='contact' color='#F2F2F2' h='100vh' fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
-            <Stack alignItems={'center'}>
+            <Stack alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                 <Text fontSize='6xl'>Contacto</Text>
             </Stack>
             <Stack direction={'row'} spacing={'16'} >

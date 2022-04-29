@@ -82,7 +82,7 @@ function Skills() {
 
     return (
         <Stack bg='#1B1E2E' color='#F2F2F2' id='skills' h={{base:'160vh' ,sm:'140vh' , md:'100vh' , lg:'100vh'}} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
-            <Stack alignItems={'center'}>
+            <Stack alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                 <Text fontSize='6xl'>Skills</Text>
             </Stack>
             <Grid  align="center"

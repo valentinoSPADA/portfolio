@@ -12,9 +12,9 @@ import image from './Images/curriculum img.jpg'
 
 function About() {
     return (
-        <Stack bg='#222639' color='#F2F2F2' id='about' minHeight={{ base: '1600px', sm: '1500px', md: '1300px', lg: '100vh' }} fontFamily='"Red Hat Display", sans-serif' direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }} alignItems={'center'} justifyContent={'space-evenly'}>
+        <Stack bg='#222639'  color='#F2F2F2' id='about' minHeight={{ base: '1600px', sm: '1500px', md: '1300px', lg: '100vh' }} fontFamily='"Red Hat Display", sans-serif' direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }} alignItems={'center'} justifyContent={'space-evenly'}>
             <Stack pl={{ base: '0', sm: '0', md: '0', lg: '123px' }} alignItems={'center'} justifyContent={'center'}>
-                <Stack mt={{ base: '40px', sm: '40px', md: '40px', lg: '0' }}>
+                <Stack mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                     <Text fontSize='6xl' pr={{ base: '0', sm: '0', md: '0', lg: '55px' }}>Sobre mi</Text>
                 </Stack>
                 <Stack spacing={10}>
@@ -29,7 +29,7 @@ function About() {
             </Stack>
             <Stack initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }} direction={'column'} w={{ base: '90%', sm: '85%', md: '70%', lg: '40%' }} bg='#5F527A' alignItems={'center'} borderRadius={'20px'} minHeight='540px' pt={'70px'} paddingLeft='70px' mb={'200px'} paddingRight={'70px'}>
+                viewport={{ once: true }} direction={'column'} w={{ base: '90%', sm: '85%', md: '70%', lg: '40%' }} bg='#5F527A' alignItems={'center'} borderRadius={'20px'} minHeight='540px' pt={'70px'} paddingLeft={{base: '10px', sm: '30px', md: '50px', lg: '70px'}} mb={'200px'} paddingRight={{base: '10px', sm: '30px', md: '50px', lg: '70px'}}>
 
                 <Text fontSize='xl'>
                     Soy un desarrollador Full Stack con orientacion al Front-end
