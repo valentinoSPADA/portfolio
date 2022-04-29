@@ -19,7 +19,7 @@ const projects = [{
     repositorio: ["https://github.com/valentinoSPADA/videogames-PI"],
     deploy: "no realizado",
     video: "https://www.linkedin.com/feed/update/urn:li:activity:6907094150408458242/",
-    description: "Desarrollo de una SPA (Single Page Application) utilizando react para el Front End y Redux como State Management.Todos los componentes fueron desarrollados con CSS y CSS modules sin uso de librerias externas. La SPA consume datos de una API (rawg.io) a traves de un Back End desarrollado en NodeJS utilizando Express, agregando nuevas funcionalidades a la API original."
+    description: "I developed a SPA (Single Page Application) using React with Redux for the Front End. All components were styled with CSS and CSS modules without using external libraries.It consumes data from an API(rawg.io) through a Back End API developed in NodeJS using Express, adding new features to the original API."
 }, {
     name: "BEEF SHOP",
     img: beefshop,
@@ -27,7 +27,7 @@ const projects = [{
     repositorio: ["https://github.com/valentinoSPADA/Henry-PF-Client", "https://github.com/valentinoSPADA/Henry-PF"],
     deploy: "https://beefshop.vercel.app/",
     video: "no realizado",
-    description: "Beef shop es un e-commerce que facilita la compra de productos de carniceria. Nuestro objetivo es lograr que cualquier persona pueda realizar una compra de manera rapida y sencilla. Esto es parte del proyecto final del Bootcamp Soy Henry, por lo cual todo lo que este relacionado con el stock, los pagos, etc. es ficticio."
+    description: "I developed a SPA (Single Page Application) using React with Redux for the Front End. It is an e-commerce page that allows you to buy meat. Also, it has an admin dashboard that you can use only if you are an admin where you can modify and create products, promotions, users, orders, and categories. It has implemented a local payment platform (Mercadopago) as the payment method."
 }]
 
 
@@ -36,7 +36,7 @@ function Proyects() {
     return (
         <Stack bg='#222639' id='projects' color='#F2F2F2' h={{ base: '1800px', sm: '200vh', md: '1700px', lg: '1000px' }} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'}>
             <Stack alignItems={'center'} mt="110px" mb={'40px'}>
-                <Text fontSize='6xl'>Proyectos</Text>
+                <Text fontSize='6xl'>Projects</Text>
             </Stack>
             <Stack alignSelf={'center'} width={'80%'} justifyContent={'center'}>
 
@@ -63,7 +63,7 @@ function Proyects() {
                                             <Text textAlign={'center'} fontSize={'xl'}>{p.description}</Text>
                                         </Stack>
                                         <Stack direction={'row'}>
-                                            <a href={p.repositorio[0]} target={'_blank'}><Button _hover={{ color: '#262626', bg: 'white' }} variant='outline'>Repositorio</Button></a>
+                                            <a href={p.repositorio[0]} target={'_blank'}><Button _hover={{ color: '#262626', bg: 'white' }} variant='outline'>Repository</Button></a>
                                             {p.video === "no realizado" ?
                                                 <a href={p.deploy} target={'_blank'}><Button _hover={{ color: '#262626', bg: 'white' }} variant='outline'>Deploy</Button></a>
                                                 :
