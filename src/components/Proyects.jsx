@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Stack,
     Button,
@@ -9,6 +9,8 @@ import {
 } from '@chakra-ui/react'
 import beefshop from "./Images/BeefShop.PNG"
 import videogameApp from "./Images/videogameApp.PNG"
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
 
 
 
@@ -33,12 +35,35 @@ const projects = [{
 
 
 function Proyects() {
+
+    const { ref, inView } = useInView({
+        threshold: 0.05
+    })
+    //  animate={inView ? {   } : null}
+    const animation = useAnimation()
+    const MoStack = motion(Stack)
+
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    type: 'tween', duration: 0.5
+                }
+            })
+        }
+    }, [inView])
+
+
+
+
     return (
-        <Stack bg='#222639' id='projects' color='#F2F2F2' h={{ base: '1800px', sm: '200vh', md: '1700px', lg: '1000px' }} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'}>
-            <Stack alignItems={'center'} mt="110px" mb={'40px'}>
+        <Stack ref={ref} bg='#222639' id='projects' color='#F2F2F2' h={{ base: '1800px', sm: '200vh', md: '1700px', lg: '1000px' }} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'}>
+            <MoStack animate={animation} initial={{ y: 100, opacity: -1, }} alignItems={'center'} mt="110px" mb={'40px'}>
                 <Text fontSize='6xl'>Projects</Text>
-            </Stack>
-            <Stack alignSelf={'center'} width={'80%'} justifyContent={'center'}>
+            </MoStack>
+            <MoStack animate={animation} initial={{ y: 100, opacity: -1, }} alignSelf={'center'} width={'80%'} justifyContent={'center'}>
 
                 <Grid justifyContent={'center'} alignItems={'center'}
                     w={{ base: "100%", sm: "100%", md: "100%", lg: "100%" }}
@@ -51,11 +76,11 @@ function Proyects() {
                         }
                     }
                 >
-                    {projects.map(p => {
+                    {projects.map((p, i) => {
                         return (
-                            <Stack justifyContent={'space-between'} margin={'10px 10px 10px 10px'} alignItems={'center'}>
+                            <Stack key={i} justifyContent={'space-between'} margin={'10px 10px 10px 10px'} alignItems={'center'}>
                                 <GridItem>
-                                    <Stack bg={'#5F527A'} borderRadius={'10px'} alignItems={'center'} justifyContent={'center'} width={{ base: '330px', sm: '450px', md: "450px", lg: '450px' }} height={{ base: '750', sm: '660px', md: "660px", lg: '660px' }}>
+                                    <MoStack whileHover={{ scale: 1.1 }} bg={'#5F527A'} borderRadius={'10px'} alignItems={'center'} justifyContent={'center'} width={{ base: '330px', sm: '450px', md: "450px", lg: '450px' }} height={{ base: '750', sm: '660px', md: "660px", lg: '660px' }}>
                                         <Text fontSize={'2xl'} spacing={0}>{p.name}</Text>
                                         <Text fontSize={'md'} spacing={0}>{p.date}</Text>
                                         <Image src={p.img} height={'200px'}></Image>
@@ -70,14 +95,14 @@ function Proyects() {
                                                 <a href={p.video} target={'_blank'}><Button _hover={{ color: '#262626', bg: 'white' }} variant='outline'>Video</Button></a>
                                             }
                                         </Stack>
-                                    </Stack>
+                                    </MoStack>
                                 </GridItem>
                             </Stack>
 
                         )
                     })}
                 </Grid>
-            </Stack>
+            </MoStack>
         </Stack>
     )
 }

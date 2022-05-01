@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Stack,
     Button,
@@ -12,6 +12,8 @@ import {
     FormErrorMessage,
     InputGroup
 } from '@chakra-ui/react'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
 
 
 
@@ -33,14 +35,31 @@ function Contact() {
         }
     }
 
+    const { ref, inView } = useInView({
+        threshold: 0.05
+    })
+    //  animate={inView ? {   } : null}
+    const animation = useAnimation()
+    const MoStack = motion(Stack)
 
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    type: 'tween', duration: 0.5
+                }
+            })
+        }
+    }, [inView])
 
     return (
-        <Stack bg='#1B1E2E' id='contact' color='#F2F2F2' h='100vh' fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
-            <Stack alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
+        <Stack ref={ref} bg='#1B1E2E' id='contact' color='#F2F2F2' h='100vh' fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
+            <MoStack initial={{ y: 100, opacity: -1, }} animate={animation} alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                 <Text fontSize='6xl'>Contact</Text>
-            </Stack>
-            <Stack direction={'row'} width={{base: '80%', sm: '60%', md: '500px'}}>
+            </MoStack>
+            <MoStack initial={{ y: 100, opacity: -1, }} animate={animation} direction={'row'} width={{base: '80%', sm: '60%', md: '500px'}}>
                 <FormControl isRequired display={'flex'} flexDirection={'column'} alignContent={'center'}>
                     <Stack direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} spacing={20}>
                         <Stack>
@@ -82,7 +101,7 @@ function Contact() {
                         Send
                     </Button>
                 </FormControl>
-            </Stack>
+            </MoStack>
             <Stack>
             </Stack>
         </Stack>

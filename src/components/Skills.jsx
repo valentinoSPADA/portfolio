@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Stack,
     Button,
@@ -23,6 +23,8 @@ import {
     SiGithub,
     SiGit
 } from 'react-icons/si'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
 
 const tecnologies = [{
     icon: <SiHtml5 size={'50px'} />,
@@ -77,14 +79,31 @@ const tecnologies = [{
 function Skills() {
 
 
+    const { ref, inView } = useInView({
+        threshold: 0.05
+    })
+    //  animate={inView ? {   } : null}
+    const animation = useAnimation()
+    const MoStack = motion(Stack)
 
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    type: 'tween', duration: 0.5
+                }
+            })
+        }
+    }, [inView])
 
 
     return (
-        <Stack bg='#1B1E2E' color='#F2F2F2' id='skills' h={{ base: '160vh', sm: '140vh', md: '100vh', lg: '100vh' }} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
-            <Stack alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
+        <Stack ref={ref} bg='#1B1E2E' color='#F2F2F2' id='skills' h={{ base: '160vh', sm: '140vh', md: '100vh', lg: '100vh' }} fontFamily='"Red Hat Display", sans-serif' direction={'column'} alignItems={'center'} justifyContent={'space-around'}>
+            <MoStack animate={animation} initial={{ y: 100, opacity: -1, }} alignItems={'center'} mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                 <Text fontSize='6xl'>Skills</Text>
-            </Stack>
+            </MoStack>
             <Grid align="center"
                 w={{ base: "100%", sm: "100%", md: "100%", lg: "90%" }}
                 gap={{ base: 6, sm: 6, md: 4, lg: 8 }}
@@ -98,14 +117,14 @@ function Skills() {
                 }
             >
                 {
-                    tecnologies?.map((t) => {
+                    tecnologies?.map((t, i) => {
                         return (
-                            <Stack alignItems={'center'}>
+                            <MoStack whileHover={{ scale: 1.1 }} animate={animation} initial={{ y: 100, opacity: -1, }} key={i} alignItems={'center'}>
                                 {t.icon}
                                 <Text>
                                     {t.name}
                                 </Text>
-                            </Stack>
+                            </MoStack>
                         )
                     })
                 }
