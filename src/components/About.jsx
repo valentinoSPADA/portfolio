@@ -34,7 +34,7 @@ function About() {
 
     return (
         <Stack ref={ref} bg='#222639' color='#F2F2F2' id='about' minHeight={{ base: '1300px', sm: '1250px', md: '1300px', lg: '100vh' }} fontFamily='"Red Hat Display", sans-serif' direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }} alignItems={'center'} justifyContent={{ md: 'space-evenly', lg: 'space-evenly' }}>
-            
+
             <MoStack initial={{ y: 100, opacity: -1, }} animate={animation} pl={{ base: '0', sm: '0', md: '0', lg: '123px' }} alignItems={'center'} justifyContent={'center'}>
                 <Stack mt={{ base: '110px', sm: '110px', md: '40px', lg: '0' }}>
                     <Text fontSize='6xl' pr={{ base: '0', sm: '0', md: '0', lg: '55px' }}>About me</Text>
@@ -44,7 +44,7 @@ function About() {
                         <Stack h='350px' position={'absolute'} display={{ base: 'none', sm: 'none', md: 'none', lg: 'flex' }} w='355px' border={'solid 5px'} borderColor='#5F527A' borderTopRightRadius={'5px'} borderLeft={'none'} borderBottom={'none'}>
                         </Stack>
                     </Stack>
-                    <MoStack  alignItems={'center'} justifyContent={'center'} >
+                    <MoStack alignItems={'center'} justifyContent={'center'} >
                         <Image src={image} h={{ base: '200px', sm: '270px', md: '300px', lg: '400px' }} borderRadius={5} border='solid 5px' borderColor={'#5F527A'}></Image>
                     </MoStack>
                 </Stack>
