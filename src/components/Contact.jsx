@@ -45,23 +45,16 @@ function Contact() {
         setError(isError({
             ...input,
             [e.target.name]: e.target.value
-          }));
+        }));
     }
 
     const isError = (input) => {
-        if(!input.email){
+        if (!input.email || !input.fullName || !input.message) {
+            console.log('asdsadasdadas')
             return true
-        }
-        if (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(input.email)) {
+        } else if (/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(input.email)) {
             return false
-        }
-        if(!input.fullName){
-            return true
-        }
-        if(!input.message){
-            return true
-        }
-         else {
+        } else {
             return true
         }
     }
@@ -115,7 +108,7 @@ function Contact() {
                                 />
                             </Stack>
                         </Stack>
-                        <Stack  margin={'auto'} mt={'20px'}>
+                        <Stack margin={'auto'} mt={'20px'}>
                             <FormLabel>Message</FormLabel>
                             <Textarea
                                 rows="5" cols="50"
