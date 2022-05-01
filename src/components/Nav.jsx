@@ -68,7 +68,7 @@ function Nav() {
                             </Stack>
                             <Link to="/" spy={true} style={{ cursor: 'pointer' }} smooth={true} offset={0} onClick={() => onClose()} duration={700}><DrawerHeader color={'#F2F2F2'} fontSize={'6xl'}>Landing</DrawerHeader></Link>
                             <DrawerBody>
-                                <Stack direction={'column'} h={'100%'} justifyContent={'space-around'}>
+                                <Stack direction={'column'} h={'88%'} justifyContent={'space-around'}>
                                     <Link to="about" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} w={'100%'} display={'flex'} justifyContent={'flex-start'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>About me</Button></Link>
                                     <Link to="skills" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} w={'100%'} display={'flex'} justifyContent={'flex-start'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Skills</Button></Link>
                                     <Link to="projects" style={{ cursor: 'pointer' }} spy={true} smooth={true} offset={0} duration={700}><Button color='#F2F2F2' bg={'none'} w={'100%'} display={'flex'} justifyContent={'flex-start'} _hover={{ bg: 'none' }} _active={{ bg: 'none' }} _focus={{ bg: 'none' }} onClick={() => onClose()} fontWeight={1} fontSize={'6xl'} padding={2}>Projects</Button></Link>
